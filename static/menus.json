@@ -1,0 +1,52 @@
+{
+	"menus": [
+		{
+			"id": 121,
+			"authName": "首页",
+			"path": "welcome",
+			"icon": "el-icon-s-home"
+		},
+		{
+			"id": 125,
+			"authName": "会员管理",
+			"path": "userManage",
+			"icon": "el-icon-user-solid",
+			"order": 1,
+			"children": [
+				{
+					"id": 110,
+					"authName": "会员列表",
+					"path": "users",
+					"children": [],
+					"order": null,
+					"icon": "el-icon-user-solid"
+				},
+        {
+					"id": 120,
+					"authName": "回收站",
+					"path": "recycle",
+					"children": [],
+					"order": null,
+					"icon": "el-icon-delete-solid"
+				}
+			]
+		},
+		{
+			"id": 145,
+			"authName": "数据统计",
+			"path": "reports",
+			"icon": "el-icon-s-data",
+			"children": [
+				{
+					"id": 146,
+					"authName": "数据报表",
+					"path": "reportstatic",
+					"children": [],
+					"order": null,
+					"icon": "el-icon-s-data"
+				}
+			],
+			"order": 5
+		}
+	]
+}
