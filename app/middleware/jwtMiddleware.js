@@ -4,7 +4,7 @@ module.exports = () => {
     const token = ctx.get('Authorization');
     try {
       console.log(ctx.request.path);
-      if (ctx.request.path !== '/api/v1/login') {
+      if (ctx.request.path !== '/v1/login') {
         const realToken = token ? token.indexOf('Bearer ') > -1 ? token.split('Bearer ')[1] : token : null;
         await ctx.app.jwt.verify(realToken);
       }
