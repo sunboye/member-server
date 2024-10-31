@@ -37,7 +37,7 @@ module.exports = appInfo => {
     },
     jwt: {
       secret: 'secret_key_qiangqiang', // 用于签名的密钥
-      expiresIn: '7d', // Token 过期时间
+      expiresIn: '7d' // Token 过期时间
     },
     cors: {
       origin: '*',
@@ -82,6 +82,6 @@ module.exports = appInfo => {
 
   return {
     ...config,
-    ...userConfig,
+    ...userConfig
   };
 };

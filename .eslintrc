@@ -3,8 +3,8 @@
   "root": true,
   "rules": {
     // 忽略尾随逗号的报错
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["off", "never"],
     // 分号
-    "semi": ["error", "omit"]
+    "semi": ["off", "never"]
   }
 }
