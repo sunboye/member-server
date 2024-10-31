@@ -49,7 +49,7 @@ module.exports = appInfo => {
     },
     logrotator: {
       filesRotateByHour: [
-        path.join(appInfo.root, 'logs', `${appInfo.name}-web.log`),
+        path.join(appInfo.root, 'logs', `${appInfo.name}-web.log`)
       ],
       maxFiles: 100 // 最多保留文件数量
     },
@@ -66,7 +66,7 @@ module.exports = appInfo => {
         password: 'root',
         // 数据库名
         // database: 'viper_manager',
-        database: 'myvipers',
+        database: 'myvipers'
       },
       tables: {
         login: 'admin_users',
