@@ -3,8 +3,8 @@
 const Service = require('egg').Service;
 const fs = require('fs');
 class CommonService extends Service {
-  formateReturn(fData, status, msg, isList) {
-    let response = {
+  formateReturn(fData, status, msg) {
+    const response = {
       data: fData || null,
       msg,
       status,
@@ -20,7 +20,7 @@ class CommonService extends Service {
     let letter = '';
     const characters = str.split('');
     for (let i = 0; i < count; i++) {
-      let randomIndex = Math.floor(Math.random() * characters.length);
+      const randomIndex = Math.floor(Math.random() * characters.length);
       letter += characters[randomIndex];
       // 避免重复选择同一个字符，可以删除已经选择的字符
       // characters.splice(randomIndex, 1);

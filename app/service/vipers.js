@@ -4,7 +4,7 @@ const Service = require('egg').Service;
 const { getViperListDB, postViperMoneyDB } = require('../DAO/vipersDAO');
 class VipersService extends Service {
   async getVipersList() {
-    const {ctx, app} = this;
+    const { ctx, app } = this;
     const params = {}
     console.dir(ctx.request.query);
     params.limit = ctx.request.query.size
@@ -19,7 +19,7 @@ class VipersService extends Service {
     return vipers;
   }
   async oprateViperMoney() {
-    const {ctx, app} = this;
+    const { ctx, app } = this;
     let params = {}
     console.dir(ctx.request.body);
     params = ctx.request.body

@@ -1,7 +1,7 @@
 'use strict';
 
 const Service = require('egg').Service;
-const fs = require('fs');
+// const fs = require('fs');
 
 class userService extends Service {
   async getUsersList() {

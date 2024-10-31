@@ -17,7 +17,7 @@ describe('test/app/controller/home.test.js', () => {
   it('should GET /', async () => {
     return app.httpRequest()
       .get('/')
-      .expect('hi, egg')
-      .expect(200);
+      .expect(data => data.code === 401)
+      .expect(401);
   });
 });

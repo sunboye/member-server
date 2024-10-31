@@ -4,11 +4,12 @@ module.exports = {
     let count = 0;
     console.log(params)
     params.offset = (params.current - 1) * params.limit
-    let sqlStr = "SELECT * FROM " + table + " LIMIT " + params.offset + "," + params.limit;
-    let countStr = "SELECT COUNT(*) as count FROM " + table;
+    let sqlStr = 'SELECT * FROM ' + table + ' LIMIT ' + params.offset + ',' + params.limit;
+    let countStr = 'SELECT COUNT(*) as count FROM ' + table;
     if (params.query) {
-      sqlStr = "SELECT * FROM " + table + " WHERE name LIKE '%" + params.query +"%' OR telephone LIKE '%" + params.query + "%'" + " LIMIT " + params.offset + "," + params.limit;
-      countStr = "SELECT COUNT(*) as count FROM " + table + " WHERE name LIKE '%" + params.query +"%' OR telephone LIKE '%" + params.query + "%'";
+      // eslint-disable-next-line no-useless-concat
+      sqlStr = 'SELECT * FROM ' + table + " WHERE name LIKE '%" + params.query + "%' OR telephone LIKE '%" + params.query + "%'" + ' LIMIT ' + params.offset + ',' + params.limit;
+      countStr = 'SELECT COUNT(*) as count FROM ' + table + " WHERE name LIKE '%" + params.query + "%' OR telephone LIKE '%" + params.query + "%'";
     }
     console.log(sqlStr)
     console.log(countStr);
@@ -26,8 +27,8 @@ module.exports = {
     const table2 = app.config.mysql.tables.opLogs;
     const opMoney = params.money;
     const vvid = params.vvid;
-    let sqlStr1 = "";
-    let sqlStr2 = "";
+    let sqlStr1 = '';
+    let sqlStr2 = '';
     let opResult = 1;
     if (params.opType === 1) {
       console.log(params)

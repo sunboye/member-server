@@ -5,7 +5,7 @@ const { getLogsDB } = require('../DAO/logsDAO.js');
 
 class LogsService extends Service {
   async getLogs() {
-    const {ctx, app} = this;
+    const { ctx, app } = this;
     const params = {}
     console.dir(ctx.request.query);
     params.limit = ctx.request.query.size

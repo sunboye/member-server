@@ -12,7 +12,7 @@ class LoginController extends Controller {
         data: { ...dataUsers[0] }, // 可以添加更多的用户信息
         exp: Math.floor(Date.now() / 1000) + (60 * 60), // 设置过期时间
       });
-      const body = Object.assign({}, dataUsers[0], { token, password: ctx.service.common.getRandomLetters(token,  dataUsers[0].password.length * 2) })
+      const body = Object.assign({}, dataUsers[0], { token, password: ctx.service.common.getRandomLetters(token, dataUsers[0].password.length * 2) })
       ctx.body = ctx.service.common.formateReturn(body, 200, '登录成功');
       // ctx.set('token', token);
       // ctx.set('Access-Control-Expose-Headers', 'token');
