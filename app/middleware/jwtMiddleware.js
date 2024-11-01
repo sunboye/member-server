@@ -22,9 +22,9 @@ module.exports = () => {
       } else {
         ctx.status = 502;
         ctx.body = {
-          code: 502,
+          code: ctx.status || 502,
           success: false,
-          msg: token ? '请求异常' : '请求异常',
+          msg: err.message || '请求异常',
           data: null
         };
       }
