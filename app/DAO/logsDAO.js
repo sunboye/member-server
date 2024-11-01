@@ -5,7 +5,7 @@ module.exports = {
     let count = 0;
     params.offset = (Number(params.current) - 1) * params.limit
     // 连表查询
-    const sqlStr = `SELECT l.*, u.name FROM ${table} l JOIN ${vipers} u ON l.user_id = u.id LIMIT ${params.offset},${params.limit}`;
+    const sqlStr = `SELECT l.*, u.name FROM ${table} l JOIN ${vipers} u ON l.user_id = u.id LIMIT ${params.offset}, ${params.limit}`;
     const countStr = `SELECT COUNT(*) as count FROM ${table}`;
     console.log('sqlStr:' + sqlStr);
     count = await app.mysql.query(countStr);

@@ -11,13 +11,23 @@ module.exports = () => {
       await next();
     } catch (err) {
       console.dir(err);
-      ctx.status = 401;
-      ctx.body = {
-        code: 401,
-        success: false,
-        msg: token ? '会话超时，请重新登录' : 'Token 校验失败，请登录',
-        data: null
-      };
+      if (err.message && (err.message.indexOf('jwt') > -1 || err.message.indexOf('token') > -1)) {
+        ctx.status = 401;
+        ctx.body = {
+          code: 401,
+          success: false,
+          msg: token ? '会话超时，请重新登录' : 'Token 校验失败，请登录',
+          data: null
+        };
+      } else {
+        ctx.status = 502;
+        ctx.body = {
+          code: 502,
+          success: false,
+          msg: token ? '请求异常' : '请求异常',
+          data: null
+        };
+      }
     }
   };
 };
