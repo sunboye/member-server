@@ -12,6 +12,7 @@ module.exports = {
     const data = await app.mysql.query(sqlStr);
     return {
       records: data,
+      size: Number(params.limit),
       total: count.length ? count[0].count || 0 : 0,
       current: Number(params.current)
     };
