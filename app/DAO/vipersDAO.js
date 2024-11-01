@@ -7,8 +7,9 @@ module.exports = {
     let sqlStr = `SELECT * FROM ${table} LIMIT ${params.offset}, ${params.limit}`;
     let countStr = `SELECT COUNT(*) as count FROM ${table}`;
     if (params.query) {
-      sqlStr = `SELECT * FROM ${table} WHERE name LIKE '%${params.query}%' OR telephone LIKE '%${params.query}%' LIMIT ${params.offset}, ${params.limit}`;
-      countStr = `SELECT COUNT(*) as count FROM ${table} WHERE name LIKE '%${params.query}%' OR telephone LIKE '%${params.query}%'`;
+      const baseQuery = `${table} WHERE name LIKE '%${params.query}%' OR telephone LIKE '%${params.query}%'`
+      sqlStr = `SELECT * FROM ${baseQuery} LIMIT ${params.offset}, ${params.limit}`;
+      countStr = `SELECT COUNT(*) as count FROM ${baseQuery}`;
     }
     console.log(sqlStr)
     console.log(countStr);
